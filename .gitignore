@@ -24,7 +24,6 @@ bin/
 /.nb-gradle/
 
 ### IntelliJ IDEA ###
-.idea
 *.iws
 *.iml
 *.ipr
@@ -34,3 +33,4 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/.idea/
