@@ -1,5 +1,7 @@
 package arraysandhasing;
 
+import java.util.HashMap;
+
 public class ValidAnagram {
     public static void main(String[] args) {
         System.out.println(isAnagram("anagram", "managra"));
@@ -10,7 +12,33 @@ public class ValidAnagram {
     }
 
     public static boolean isAnagram(String s, String t) {
-        return false;
+
+        char[] sCharArray = s.toCharArray();
+        char[] tCharArray = t.toCharArray();
+
+        if (sCharArray.length != tCharArray.length)
+            return false;
+
+        HashMap<Character, Integer> sMap = initCharFrequentMap(sCharArray);
+        HashMap<Character, Integer> tMap = initCharFrequentMap(tCharArray);
+
+        for (char c : sCharArray) {
+            if (sMap.get(c) != tMap.get(c))
+                return false;
+        }
+
+        return true;
+    }
+
+    private static HashMap<Character, Integer> initCharFrequentMap(char[] input) {
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        for (char c : input) {
+            if (hashMap.containsKey(c))
+                hashMap.put(c, hashMap.get(c) + 1);
+            else
+                hashMap.put(c, 1);
+        }
+        return hashMap;
     }
 
 }
