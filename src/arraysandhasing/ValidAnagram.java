@@ -1,6 +1,7 @@
 package arraysandhasing;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class ValidAnagram {
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class ValidAnagram {
         HashMap<Character, Integer> tMap = initCharFrequentMap(tCharArray);
 
         for (char c : sCharArray) {
-            if (sMap.get(c) != tMap.get(c))
+            if (!Objects.equals(sMap.get(c), tMap.get(c)))
                 return false;
         }
 
