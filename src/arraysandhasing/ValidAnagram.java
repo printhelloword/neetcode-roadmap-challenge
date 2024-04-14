@@ -1,5 +1,6 @@
 package arraysandhasing;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -10,6 +11,25 @@ public class ValidAnagram {
         System.out.println(isAnagram("astro", "ortsi"));
         System.out.println(isAnagram("dople", "dploy"));
         System.out.println(isAnagram("sushi", "sishu"));
+
+        System.out.println();
+        System.out.println(isAnagramV2("anagram", "managra"));
+        System.out.println(isAnagramV2("loop", "pool"));
+        System.out.println(isAnagramV2("astro", "ortsi"));
+        System.out.println(isAnagramV2("dople", "dploy"));
+        System.out.println(isAnagramV2("sushi", "sishu"));
+    }
+
+    public static boolean isAnagramV2(String s, String t) {
+        char[] sCharArray = s.toCharArray();
+        Arrays.sort(sCharArray);
+        char[] tCharArray = t.toCharArray();
+        Arrays.sort(tCharArray);
+
+        String sortedS = Arrays.toString(sCharArray);
+        String sortedT = Arrays.toString(tCharArray);
+
+        return (sortedS.equals(sortedT));
     }
 
     public static boolean isAnagram(String s, String t) {
