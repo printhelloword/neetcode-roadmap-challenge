@@ -4,27 +4,27 @@ import java.util.*;
 
 public class GroupAnagram {
     public static void main(String[] args) {
-//        System.out.println(groupAnagrams(new String[]{"anagram", "managra", "uphill", "agnamar", "lihlpu", "bird"}));
-        System.out.println(groupAnagrams(new String[]{"",""}));
-        System.out.println(groupAnagrams(new String[]{"anagram","anagram"}));
+        System.out.println(groupAnagrams(new String[]{"anagram", "managra", "uphill", "agnamar", "lihlpu", "bird"}));
+        System.out.println(groupAnagrams(new String[]{"", ""}));
+        System.out.println(groupAnagrams(new String[]{"anagram", "anagram"}));
     }
 
     public static List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> finalResult = new ArrayList<>();
 
         HashMap<String, Objects> frequentMap = new HashMap<>();
-        for (String string : strs) {
-            if (frequentMap.containsKey(string)) continue;
+        for (int i = 0; i < strs.length; i++) {
+            if (frequentMap.containsKey(strs[i])) continue;
 
             List<String> groupedAnagram = new ArrayList<>();
-            groupedAnagram.add(string);
-            for (String string1 : strs) {
-                if (string.equals(string1)) continue;
+            groupedAnagram.add(strs[i]);
+            for (int j = 0; j < strs.length; j++) {
+                if (i == j) continue;
 
-                if (isAnagram(string, string1)) {
-                    groupedAnagram.add(string1);
-                    frequentMap.put(string, null);
-                    frequentMap.put(string1, null);
+                if (isAnagram(strs[i], strs[j])) {
+                    groupedAnagram.add(strs[j]);
+                    frequentMap.put(strs[i], null);
+                    frequentMap.put(strs[j], null);
                 }
             }
             finalResult.add(groupedAnagram.stream().toList());
