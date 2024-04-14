@@ -6,6 +6,7 @@ public class GroupAnagram {
     public static void main(String[] args) {
 //        System.out.println(groupAnagrams(new String[]{"anagram", "managra", "uphill", "agnamar", "lihlpu", "bird"}));
         System.out.println(groupAnagrams(new String[]{"",""}));
+        System.out.println(groupAnagrams(new String[]{"anagram","anagram"}));
     }
 
     public static List<List<String>> groupAnagrams(String[] strs) {
