@@ -13,6 +13,26 @@ public class GroupAnagram {
         System.out.println(groupAnagramsV2(new String[]{"anagram", "managra", "uphill", "agnamar", "lihlpu", "bird"}));
         System.out.println(groupAnagramsV2(new String[]{"", ""}));
         System.out.println(groupAnagramsV2(new String[]{"anagram", "anagram"}));
+
+        System.out.println();
+
+        System.out.println(groupAnagramsV3(new String[]{"anagram", "managra", "uphill", "agnamar", "lihlpu", "bird"}));
+        System.out.println(groupAnagramsV3(new String[]{"", ""}));
+        System.out.println(groupAnagramsV3(new String[]{"anagram", "anagram"}));
+    }
+
+    public static List<List<String>> groupAnagramsV3(String[] strs) {
+        Map<String, List<String>> frequentMap = new HashMap<>();
+        for (String string : strs) {
+            char[] charString = string.toCharArray();
+            Arrays.sort(charString);
+            String sortedString = Arrays.toString(charString);
+
+            frequentMap.putIfAbsent(sortedString, new ArrayList<>());
+
+            frequentMap.get(sortedString).add(string);
+        }
+        return frequentMap.values().stream().toList();
     }
 
     public static List<List<String>> groupAnagramsV2(String[] strs) {
