@@ -12,6 +12,9 @@ public class LongestConsecutive {
         System.out.println(longestConsecutive(new int[]{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}));
         System.out.println(longestConsecutive(new int[]{0, 3, 7, 2, 8, 4, 6, 0, 1, 11, 10}));
         System.out.println(longestConsecutive(new int[]{0, 3, 7, 2, 8, 4, 6, 1, 11, 10}));
+        System.out.println(longestConsecutive(new int[]{1, 2, 0, 1}));
+        System.out.println(longestConsecutive(new int[]{0, 0}));
+
     }
 
     public static int longestConsecutive(int[] nums) {
