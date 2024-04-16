@@ -21,11 +21,20 @@ public class LongestConsecutive {
         Arrays.sort(nums);
         Map<Integer, Integer> map = new HashMap<>();
         int counter = 1;
+
+        if (nums.length == 1)
+            return 1;
+
+        if (nums.length == 0)
+            return 0;
+
         for (int i = 0; i < nums.length; i++) {
             if (i == 0) {
-                map.put(0, 0);
+                map.put(1, 1);
                 continue;
             }
+            if (nums[i] == nums[i - 1]) continue;
+
             if (nums[i] == nums[i - 1] + 1) {
                 counter++;
                 map.put(i, counter);
