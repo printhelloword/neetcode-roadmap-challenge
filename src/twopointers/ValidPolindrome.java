@@ -6,7 +6,7 @@ public class ValidPolindrome {
         System.out.println(isPalindrome("appa"));
         System.out.println(isPalindrome("api"));
         System.out.println(isPalindrome("air"));
-        System.out.println(isPalindrome("Was it a car or a cat I saw"));
+        System.out.println(isPalindrome("Was it a car or a cat I saw?"));
         System.out.println(isPalindrome("tab a cat"));
 
     }
@@ -14,7 +14,8 @@ public class ValidPolindrome {
     public static boolean isPalindrome(String s) {
         if (s.length()<1 || s.length()>1000)
             return false;
-        s=s.replace(" ","").toLowerCase();
+        
+        s = s.replaceAll("[^a-zA-Z0-9]","").toLowerCase();
 
         int charSize = s.length();
         
@@ -33,10 +34,7 @@ public class ValidPolindrome {
             if (i==mid+1)
                 return true;
         }
-
         return true;
-
-
     }
 
 }
