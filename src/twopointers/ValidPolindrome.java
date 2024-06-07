@@ -18,8 +18,6 @@ public class ValidPolindrome {
         s = s.replaceAll("[^a-zA-Z0-9]","").toLowerCase();
 
         int charSize = s.length();
-        
-        char[] chars = s.toCharArray();
         int mid;
         if (s.length() % 2 != 0)
             mid = (charSize-1) / 2;
@@ -28,7 +26,7 @@ public class ValidPolindrome {
 
         for (int i=0; i < charSize; i++){
         
-            if (chars[i] != chars[(charSize-1)-i])
+            if (s.charAt(i) != s.charAt((charSize-1)-i))
                 return false;
 
             if (i==mid+1)
