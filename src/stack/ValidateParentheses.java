@@ -15,6 +15,10 @@ public class ValidateParentheses {
         System.out.println(isValid("]]"));
         System.out.println(isValid("(("));
         System.out.println(isValid("[["));
+
+        System.out.println();
+
+        System.out.println(isValid("[[[]"));
     }
 
     public static boolean isValid(String s) {
@@ -49,6 +53,9 @@ public class ValidateParentheses {
                 default:
                     break;
             }
+
+            if (i+1 == s.length() && !stack.empty())
+                return false;
         }
         return true;
     }
