@@ -27,7 +27,6 @@ public class ValidateParentheses {
         if(s.length() % 2 != 0)
             return false;
 
-        int stackSize;
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '{' || s.charAt(i) == '[' || s.charAt(i) == '(' ) {
                 stack.push(s.charAt(i));
