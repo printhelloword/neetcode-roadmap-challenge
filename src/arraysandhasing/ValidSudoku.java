@@ -22,7 +22,6 @@ public class ValidSudoku {
     public static boolean isValidSudokuNonIndex(char[][] board) {
         HashMap<Integer, HashSet<Character>> columnMap = new HashMap<>();
 
-        int colSize = board[0].length;
         int rowCount = 0;
         for (char[] row : board) {
             HashSet<Character> c = new HashSet<>();
